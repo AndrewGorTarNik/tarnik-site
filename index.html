@@ -1,0 +1,1634 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ТарНик — Пластиковые ящики оптом в Долгопрудном</title>
+  <meta name="description" content="Пластиковые ящики для мяса, хлеба и склада. 30+ моделей всегда в наличии. Пищевой пластик, морозостойкие, евростандарт 600×400. Самовывоз или доставка по всей России.">
+  <meta name="keywords" content="пластиковые ящики, ящики оптом, ящик 600х400, евроящики, морозостойкие ящики, пищевые ящики, ящик для мяса, хлебный ящик, тележка подкатная, пластиковая тара">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ── RESET ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    /* ── TOKENS ── */
+    :root {
+      --blue:      #1C3557;
+      --blue-dark: #142640;
+      --blue-mid:  #254a78;
+      --amber:     #E8941A;
+      --amber-dark:#c47a12;
+      --bg:        #F5F3EF;
+      --bg-card:   #FFFFFF;
+      --text:      #141820;
+      --text-mid:  #3D4451;
+      --text-muted:#6B7280;
+      --border:    #E2DED8;
+      --shadow:    0 4px 24px rgba(28,53,87,0.10);
+      --shadow-lg: 0 12px 48px rgba(28,53,87,0.16);
+      --radius:    12px;
+      --radius-lg: 20px;
+    }
+
+    /* ── BASE ── */
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── HEADER ── */
+    .header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(20,38,64,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(232,148,26,0.2);
+      transition: background 0.3s;
+    }
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+    .logo-mark {
+      width: 40px; height: 40px;
+      background: var(--amber);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .logo-mark svg { width: 24px; height: 24px; }
+    .logo-text {
+      font-family: 'Oswald', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 1px;
+    }
+    .logo-text span { color: var(--amber); }
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .nav a {
+      color: rgba(255,255,255,0.75);
+      font-size: 14px;
+      font-weight: 500;
+      padding: 6px 14px;
+      border-radius: 6px;
+      transition: color 0.2s, background 0.2s;
+    }
+    .nav a:hover { color: #fff; background: rgba(255,255,255,0.08); }
+    .header-cta {
+      background: var(--amber);
+      color: #fff !important;
+      font-weight: 600 !important;
+      padding: 8px 20px !important;
+      border-radius: 8px !important;
+      transition: background 0.2s !important;
+    }
+    .header-cta:hover { background: var(--amber-dark) !important; }
+    .burger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .burger span {
+      width: 24px; height: 2px;
+      background: #fff;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: -60px;
+      background:
+        linear-gradient(135deg, rgba(20,38,64,0.88) 0%, rgba(28,53,87,0.72) 60%, rgba(232,148,26,0.15) 100%),
+        url('img/hero-bg.jpg') center/cover no-repeat;
+      will-change: transform;
+      z-index: 0;
+    }
+    /* Placeholder пока нет фото */
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        repeating-linear-gradient(45deg, rgba(255,255,255,0.02) 0px, rgba(255,255,255,0.02) 1px, transparent 1px, transparent 40px),
+        repeating-linear-gradient(-45deg, rgba(255,255,255,0.02) 0px, rgba(255,255,255,0.02) 1px, transparent 1px, transparent 40px);
+    }
+    /* Абстрактный фон-заглушка */
+    .hero-bg-placeholder {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 70% 50%, rgba(37,74,120,0.6) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 20% 80%, rgba(232,148,26,0.15) 0%, transparent 60%),
+        linear-gradient(160deg, #0d1f35 0%, #1C3557 40%, #254a78 100%);
+    }
+    .hero-decor {
+      position: absolute;
+      right: -80px; top: 50%;
+      transform: translateY(-50%);
+      width: 600px; height: 600px;
+      border: 1px solid rgba(232,148,26,0.15);
+      border-radius: 50%;
+      z-index: 0;
+    }
+    .hero-decor::before {
+      content: '';
+      position: absolute;
+      inset: 60px;
+      border: 1px solid rgba(232,148,26,0.1);
+      border-radius: 50%;
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 120px 24px 80px;
+      width: 100%;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(232,148,26,0.15);
+      border: 1px solid rgba(232,148,26,0.4);
+      border-radius: 100px;
+      padding: 6px 16px 6px 10px;
+      margin-bottom: 28px;
+    }
+    .hero-badge-dot {
+      width: 8px; height: 8px;
+      background: var(--amber);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(0.8); }
+    }
+    .hero-badge span {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--amber);
+      letter-spacing: 0.5px;
+    }
+    .hero-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(36px, 5.5vw, 68px);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.1;
+      letter-spacing: -0.5px;
+      max-width: 780px;
+      margin-bottom: 24px;
+      text-wrap: balance;
+    }
+    .hero-title .accent { color: var(--amber); }
+    .hero-sub {
+      font-size: clamp(15px, 2vw, 18px);
+      color: rgba(255,255,255,0.78);
+      max-width: 560px;
+      line-height: 1.7;
+      margin-bottom: 40px;
+    }
+    .hero-sub p { margin-bottom: 4px; }
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 64px;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--amber);
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      padding: 15px 30px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(232,148,26,0.4);
+    }
+    .btn-primary:hover {
+      background: var(--amber-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(232,148,26,0.45);
+    }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 500;
+      padding: 15px 30px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.2);
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.14);
+      border-color: rgba(255,255,255,0.35);
+    }
+    .hero-stats {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .hero-stat { }
+    .hero-stat-num {
+      font-family: 'Oswald', sans-serif;
+      font-size: 36px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1;
+    }
+    .hero-stat-num span { color: var(--amber); }
+    .hero-stat-label {
+      font-size: 13px;
+      color: rgba(255,255,255,0.55);
+      margin-top: 4px;
+    }
+    .hero-scroll {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      z-index: 1;
+      animation: bounce 2s ease-in-out infinite;
+    }
+    .hero-scroll span {
+      font-size: 11px;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .hero-scroll svg { color: rgba(255,255,255,0.4); }
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(8px); }
+    }
+
+    /* ── SECTION BASE ── */
+    .section { padding: 96px 24px; }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+    .section-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--amber);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 700;
+      color: var(--blue);
+      line-height: 1.15;
+      margin-bottom: 16px;
+      text-wrap: balance;
+    }
+    .section-desc {
+      font-size: 17px;
+      color: var(--text-mid);
+      max-width: 600px;
+      line-height: 1.7;
+    }
+    .section-head { margin-bottom: 56px; }
+
+    /* ── TRUST BAR ── */
+    .trust {
+      background: var(--blue);
+      padding: 0 24px;
+    }
+    .trust-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+    .trust-item {
+      padding: 40px 32px;
+      border-right: 1px solid rgba(255,255,255,0.08);
+      position: relative;
+    }
+    .trust-item:last-child { border-right: none; }
+    .trust-num {
+      font-family: 'Oswald', sans-serif;
+      font-size: 44px;
+      font-weight: 700;
+      color: var(--amber);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .trust-label {
+      font-size: 14px;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.5;
+    }
+    .trust-label strong {
+      display: block;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 500;
+      margin-bottom: 2px;
+    }
+
+    /* ── УТП / ПОЧЕМУ МЫ ── */
+    .utp { background: var(--bg); }
+    .utp-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .utp-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      transition: transform 0.25s, box-shadow 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+    .utp-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--amber);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s;
+    }
+    .utp-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .utp-card:hover::before { transform: scaleX(1); }
+    .utp-icon {
+      width: 52px; height: 52px;
+      background: rgba(28,53,87,0.06);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 20px;
+      font-size: 26px;
+    }
+    .utp-card h3 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--blue);
+      margin-bottom: 10px;
+    }
+    .utp-card p {
+      font-size: 14px;
+      color: var(--text-mid);
+      line-height: 1.65;
+    }
+
+    /* ── КАТАЛОГ ── */
+    .catalog { background: var(--blue-dark); }
+    .catalog .section-title { color: #fff; }
+    .catalog .section-desc { color: rgba(255,255,255,0.6); }
+    .catalog .section-label { color: var(--amber); }
+    .catalog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .cat-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: transform 0.25s, border-color 0.25s;
+      cursor: pointer;
+    }
+    .cat-card:hover { transform: translateY(-4px); border-color: rgba(232,148,26,0.5); }
+    .cat-img {
+      height: 200px;
+      background: rgba(255,255,255,0.04);
+      display: flex; align-items: center; justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cat-img-placeholder {
+      font-size: 64px;
+      opacity: 0.6;
+      filter: grayscale(0.3);
+    }
+    .cat-img-label {
+      position: absolute;
+      top: 12px; right: 12px;
+      background: var(--amber);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 100px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .cat-body { padding: 24px; }
+    .cat-body h3 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .cat-body p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    .cat-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .cat-tag {
+      font-size: 11px;
+      color: rgba(255,255,255,0.6);
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 3px 10px;
+      border-radius: 100px;
+    }
+    .cat-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--amber);
+      font-size: 13px;
+      font-weight: 600;
+      margin-top: 16px;
+      transition: gap 0.2s;
+    }
+    .cat-card:hover .cat-link { gap: 10px; }
+
+    /* ── КАК РАБОТАЕМ ── */
+    .how { background: var(--bg); }
+    .how-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      position: relative;
+    }
+    .how-steps::before {
+      content: '';
+      position: absolute;
+      top: 36px;
+      left: calc(16.66% + 36px);
+      right: calc(16.66% + 36px);
+      height: 2px;
+      background: linear-gradient(90deg, var(--amber), rgba(232,148,26,0.3));
+    }
+    .how-step { text-align: center; }
+    .how-step-num {
+      width: 72px; height: 72px;
+      background: var(--blue);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 24px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--amber);
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 0 0 8px var(--bg), 0 0 0 10px rgba(28,53,87,0.12);
+    }
+    .how-step h3 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--blue);
+      margin-bottom: 10px;
+    }
+    .how-step p {
+      font-size: 14px;
+      color: var(--text-mid);
+      line-height: 1.65;
+    }
+
+    /* ── ДЛЯ КОГО ── */
+    .for-whom { background: #EAF0F8; }
+    .industry-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .industry-card {
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      padding: 24px 20px;
+      text-align: center;
+      border: 1px solid var(--border);
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    }
+    .industry-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+      border-color: var(--amber);
+    }
+    .industry-icon { font-size: 36px; margin-bottom: 12px; }
+    .industry-card h4 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--blue);
+      margin-bottom: 6px;
+    }
+    .industry-card p {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* ── ПАРАЛЛАКС БАННЕР ── */
+    .parallax-banner {
+      position: relative;
+      padding: 120px 24px;
+      overflow: hidden;
+    }
+    .parallax-banner-bg {
+      position: absolute;
+      inset: -80px;
+      background:
+        linear-gradient(135deg, rgba(20,38,64,0.92) 0%, rgba(28,53,87,0.85) 100%),
+        url('img/warehouse-bg.jpg') center/cover no-repeat;
+      will-change: transform;
+    }
+    .parallax-banner-bg-placeholder {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 80% at 80% 50%, rgba(37,74,120,0.5) 0%, transparent 70%),
+        linear-gradient(135deg, #0d1f35 0%, #1C3557 100%);
+    }
+    .parallax-banner-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .parallax-banner .section-label { text-align: center; display: block; margin-bottom: 16px; }
+    .parallax-banner .section-title { color: #fff; text-align: center; }
+    .parallax-banner .section-title span { color: var(--amber); }
+    .parallax-banner-desc {
+      font-size: 18px;
+      color: rgba(255,255,255,0.72);
+      margin: 20px auto 36px;
+      line-height: 1.7;
+    }
+    .parallax-banner .hero-actions { justify-content: center; }
+
+    /* ── ОТЗЫВЫ ── */
+    .reviews { background: var(--bg); }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .review-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+    .review-stars {
+      color: var(--amber);
+      font-size: 18px;
+      letter-spacing: 2px;
+      margin-bottom: 14px;
+    }
+    .review-text {
+      font-size: 14px;
+      color: var(--text-mid);
+      line-height: 1.7;
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+    .review-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .review-avatar {
+      width: 44px; height: 44px;
+      background: var(--blue);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Oswald', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--amber);
+      flex-shrink: 0;
+    }
+    .review-name {
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+    .review-company {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* ── КОНТАКТЫ ── */
+    .contacts { background: var(--blue-dark); padding: 96px 24px; }
+    .contacts-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .contacts .section-title { color: #fff; }
+    .contacts .section-desc { color: rgba(255,255,255,0.6); margin-bottom: 40px; }
+    .contacts .section-label { color: var(--amber); }
+    .contact-list { display: flex; flex-direction: column; gap: 20px; }
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .contact-icon {
+      width: 44px; height: 44px;
+      background: rgba(232,148,26,0.15);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+    .contact-item-label {
+      font-size: 12px;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 2px;
+    }
+    .contact-item-val {
+      font-size: 16px;
+      font-weight: 500;
+      color: #fff;
+    }
+    .contact-item-val a {
+      color: var(--amber);
+      transition: opacity 0.2s;
+    }
+    .contact-item-val a:hover { opacity: 0.8; }
+    .contact-form {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+    }
+    .contact-form h3 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 24px;
+    }
+    .form-group { margin-bottom: 16px; }
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 6px;
+    }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      color: #fff;
+      outline: none;
+      transition: border-color 0.2s;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+    .form-group select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23E8941A' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 36px;
+      cursor: pointer;
+    }
+    .form-group select option {
+      background: #1C3557;
+      color: #fff;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: rgba(255,255,255,0.3); }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus { border-color: var(--amber); }
+    .form-group textarea { height: 80px; resize: none; }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .form-note {
+      font-size: 12px;
+      color: rgba(255,255,255,0.35);
+      margin-top: 12px;
+      line-height: 1.5;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #0a1929;
+      padding: 32px 24px;
+      text-align: center;
+    }
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .footer-logo {
+      font-family: 'Oswald', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.5);
+    }
+    .footer-logo span { color: var(--amber); }
+    .footer-copy {
+      font-size: 13px;
+      color: rgba(255,255,255,0.3);
+    }
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+    .footer-links a {
+      font-size: 13px;
+      color: rgba(255,255,255,0.35);
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: rgba(255,255,255,0.7); }
+
+    /* ── TELEGRAM FLOAT ── */
+    .tg-float {
+      position: fixed;
+      bottom: 28px; right: 28px;
+      z-index: 999;
+      width: 60px; height: 60px;
+      background: #229ED9;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 6px 24px rgba(34,158,217,0.5);
+      transition: transform 0.2s, box-shadow 0.2s;
+      animation: float-in 0.5s 1s both;
+    }
+    .tg-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 10px 32px rgba(34,158,217,0.6);
+    }
+    .tg-float svg { width: 30px; height: 30px; color: #fff; }
+    @keyframes float-in {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── REVEAL ANIMATION ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+    .reveal-delay-5 { transition-delay: 0.5s; }
+
+    /* ── MOBILE ── */
+    @media (max-width: 1024px) {
+      .trust-inner { grid-template-columns: repeat(2, 1fr); }
+      .trust-item:nth-child(2) { border-right: none; }
+      .trust-item:nth-child(3) { border-top: 1px solid rgba(255,255,255,0.08); }
+      .trust-item:nth-child(4) { border-top: 1px solid rgba(255,255,255,0.08); }
+      .utp-grid { grid-template-columns: repeat(2, 1fr); }
+      .catalog-grid { grid-template-columns: repeat(2, 1fr); }
+      .industry-grid { grid-template-columns: repeat(2, 1fr); }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .contacts-inner { grid-template-columns: 1fr; gap: 40px; }
+    }
+    @media (max-width: 768px) {
+      .section { padding: 64px 20px; }
+      .nav { display: none; }
+      .burger { display: flex; }
+      .nav.open {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 68px; left: 0; right: 0;
+        background: var(--blue-dark);
+        padding: 20px;
+        gap: 4px;
+        z-index: 999;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+      }
+      .nav.open a {
+        display: block;
+        padding: 12px 16px;
+        border-radius: 8px;
+      }
+      .hero-stats { gap: 24px; }
+      .hero-stat-num { font-size: 28px; }
+      .trust-inner { grid-template-columns: 1fr 1fr; }
+      .utp-grid { grid-template-columns: 1fr; }
+      .catalog-grid { grid-template-columns: 1fr; }
+      .how-steps { grid-template-columns: 1fr; gap: 40px; }
+      .how-steps::before { display: none; }
+      .industry-grid { grid-template-columns: repeat(2, 1fr); }
+      .contact-form { padding: 24px; }
+      .footer-inner { flex-direction: column; text-align: center; gap: 12px; }
+      .tg-float { bottom: 20px; right: 20px; width: 52px; height: 52px; }
+    }
+    @media (max-width: 480px) {
+      .trust-inner { grid-template-columns: 1fr; }
+      .trust-item { border-right: none; border-top: 1px solid rgba(255,255,255,0.08); }
+      .trust-item:first-child { border-top: none; }
+      .industry-grid { grid-template-columns: 1fr 1fr; }
+      .hero-actions { flex-direction: column; }
+      .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<header class="header" id="header">
+  <div class="header-inner">
+    <a href="#" class="logo">
+      <div class="logo-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="7" width="20" height="14" rx="2"/>
+          <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
+          <line x1="12" y1="12" x2="12" y2="16"/>
+          <line x1="10" y1="14" x2="14" y2="14"/>
+        </svg>
+      </div>
+      <span class="logo-text">ТАР<span>НИК</span></span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="#catalog">Каталог</a>
+      <a href="#how">Как работаем</a>
+      <a href="#for-whom">Для кого</a>
+      <a href="#contacts">Контакты</a>
+      <a href="https://t.me/tarnik_plast" target="_blank" class="header-cta">Написать в Telegram</a>
+    </nav>
+    <div class="burger" id="burger" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</header>
+
+<!-- ── HERO ── -->
+<section class="hero" id="hero">
+  <div class="hero-bg" id="heroBg">
+    <div class="hero-bg-placeholder"></div>
+  </div>
+  <div class="hero-decor"></div>
+  <div class="hero-inner">
+    <div class="hero-badge">
+      <div class="hero-badge-dot"></div>
+      <span>Склад в Долгопрудном — работаем Пн–Сб 9:00–18:00</span>
+    </div>
+    <h1 class="hero-title">
+      Пластиковые ящики<br>для мяса, хлеба и склада —<br><span class="accent">всегда в наличии</span>
+    </h1>
+    <div class="hero-sub">
+      <p>Пищевой пластик, морозостойкие модели, евростандарт 600×400.</p>
+      <p>30+ моделей на складе в Долгопрудном всегда в наличии — новые и б/у.</p>
+      <p>Самовывоз или доставка по всей России.</p>
+    </div>
+    <div class="hero-actions">
+      <a href="https://t.me/tarnik_plast" target="_blank" class="btn-primary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m22 2-7 20-4-9-9-4 20-7z"/><path d="M22 2 11 13"/></svg>
+        Написать в Telegram
+      </a>
+      <a href="#catalog" class="btn-secondary">
+        Смотреть каталог
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num">30<span>+</span></div>
+        <div class="hero-stat-label">моделей в наличии</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">600<span>×</span>400</div>
+        <div class="hero-stat-label">евростандарт</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">−30<span>°C</span></div>
+        <div class="hero-stat-label">морозостойкие</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">РФ</div>
+        <div class="hero-stat-label">доставка по всей России</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span>Листать</span>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+  </div>
+</section>
+
+<!-- ── TRUST BAR ── -->
+<section class="trust">
+  <div class="trust-inner">
+    <div class="trust-item reveal">
+      <div class="trust-num">30+</div>
+      <div class="trust-label"><strong>Моделей ящиков</strong>новые и б/у в наличии</div>
+    </div>
+    <div class="trust-item reveal reveal-delay-1">
+      <div class="trust-num">−30°</div>
+      <div class="trust-label"><strong>Морозостойкие</strong>работают при заморозке</div>
+    </div>
+    <div class="trust-item reveal reveal-delay-2">
+      <div class="trust-num">1</div>
+      <div class="trust-label"><strong>От одного ящика</strong>нет минимального заказа</div>
+    </div>
+    <div class="trust-item reveal reveal-delay-3">
+      <div class="trust-num">РФ</div>
+      <div class="trust-label"><strong>Доставка по России</strong>транспортными компаниями</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ПОЧЕМУ ТАРНИК ── -->
+<section class="section utp" id="utp">
+  <div class="section-inner">
+    <div class="section-head">
+      <div class="section-label">Наши преимущества</div>
+      <h2 class="section-title">Почему выбирают ТарНик</h2>
+      <p class="section-desc">Работаем напрямую — без менеджеров-посредников. Андрей отвечает лично в Telegram.</p>
+    </div>
+    <div class="utp-grid">
+      <div class="utp-card reveal">
+        <div class="utp-icon">🏭</div>
+        <h3>Всегда в наличии</h3>
+        <p>Большой склад в Долгопрудном. Не надо ждать производство — приезжайте и забирайте сразу.</p>
+      </div>
+      <div class="utp-card reveal reveal-delay-1">
+        <div class="utp-icon">🍖</div>
+        <h3>Пищевой пластик</h3>
+        <p>Ящики для мяса, рыбы, хлеба. Безопасный материал с маркировкой пищевого контакта. Подходит для проверок.</p>
+      </div>
+      <div class="utp-card reveal reveal-delay-2">
+        <div class="utp-icon">❄️</div>
+        <h3>Морозостойкие модели</h3>
+        <p>Не трескаются на холоде. Работают при −40°C. Для холодильных камер, заморозки и охлаждённой продукции.</p>
+      </div>
+      <div class="utp-card reveal reveal-delay-3">
+        <div class="utp-icon">🤝</div>
+        <h3>Подберём под задачу</h3>
+        <p>Не нужно разбираться в моделях — расскажите, что храните и перевозите. Предложим оптимальный вариант.</p>
+      </div>
+      <div class="utp-card reveal reveal-delay-4">
+        <div class="utp-icon">📦</div>
+        <h3>Тележки и крышки</h3>
+        <p>Подкатные тележки 150 и 200 кг под евростандарт 600×400. Крышки в наличии. Комплектуем заказ под ключ.</p>
+      </div>
+      <div class="utp-card reveal reveal-delay-5">
+        <div class="utp-icon">🚚</div>
+        <h3>Доставка по всей России</h3>
+        <p>Отправляем транспортными компаниями. Поможем выбрать ТК. Надёжная упаковка. Самовывоз со склада.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── КАТАЛОГ ── -->
+<section class="section catalog" id="catalog">
+  <div class="section-inner">
+    <div class="section-head">
+      <div class="section-label">Ассортимент</div>
+      <h2 class="section-title">Каталог продукции</h2>
+      <p class="section-desc">Евростандарт 600×400, серия 400×300, крышки и тележки. Уточняйте наличие и цену в Telegram.</p>
+    </div>
+    <div class="catalog-grid">
+
+      <div class="cat-card reveal">
+        <div class="cat-img">
+          <div class="cat-img-placeholder">📦</div>
+          <span class="cat-img-label">Хит продаж</span>
+        </div>
+        <div class="cat-body">
+          <h3>Ящики 600×400 — Евроформат</h3>
+          <p>Самая популярная серия. 20+ моделей от 75 до 410 мм высотой. Конусные, морозостойкие, перфорированные, пищевые.</p>
+          <div class="cat-tags">
+            <span class="cat-tag">Е2 200мм</span>
+            <span class="cat-tag">Е3 300мм</span>
+            <span class="cat-tag">Е4 410мм</span>
+            <span class="cat-tag">Морозостойкие</span>
+            <span class="cat-tag">Конусные</span>
+          </div>
+          <a href="https://t.me/tarnik_plast" target="_blank" class="cat-link">
+            Узнать цену →
+          </a>
+        </div>
+      </div>
+
+      <div class="cat-card reveal reveal-delay-1">
+        <div class="cat-img">
+          <div class="cat-img-placeholder">🥬</div>
+          <span class="cat-img-label">Для пищевых</span>
+        </div>
+        <div class="cat-body">
+          <h3>Ящики 400×300 — Малая серия</h3>
+          <p>Дрожжевые, финпак, цветочный бак. Для пекарен, цветочных баз, грибных ферм. Компактные и удобные.</p>
+          <div class="cat-tags">
+            <span class="cat-tag">180мм</span>
+            <span class="cat-tag">270мм</span>
+            <span class="cat-tag">350мм</span>
+            <span class="cat-tag">Цветочный бак</span>
+          </div>
+          <a href="https://t.me/tarnik_plast" target="_blank" class="cat-link">
+            Узнать цену →
+          </a>
+        </div>
+      </div>
+
+      <div class="cat-card reveal reveal-delay-2">
+        <div class="cat-img">
+          <div class="cat-img-placeholder">🔄</div>
+          <span class="cat-img-label">Экономия места</span>
+        </div>
+        <div class="cat-body">
+          <h3>Раскладные ящики</h3>
+          <p>Складываются до 35 мм — экономия 80% места при обратном транспорте. Идеальны для логистики и возвратной тары.</p>
+          <div class="cat-tags">
+            <span class="cat-tag">600×400</span>
+            <span class="cat-tag">До 35мм сложенный</span>
+            <span class="cat-tag">Логистика</span>
+          </div>
+          <a href="https://t.me/tarnik_plast" target="_blank" class="cat-link">
+            Узнать цену →
+          </a>
+        </div>
+      </div>
+
+      <div class="cat-card reveal reveal-delay-1">
+        <div class="cat-img">
+          <div class="cat-img-placeholder">🔩</div>
+        </div>
+        <div class="cat-body">
+          <h3>Конусные ящики</h3>
+          <p>Вкладываются друг в друга — экономия до 60% места при хранении. Е2, Е3, Е4 конусные. Морозостойкие варианты.</p>
+          <div class="cat-tags">
+            <span class="cat-tag">Е2 конусный</span>
+            <span class="cat-tag">Е3 конусный</span>
+            <span class="cat-tag">Е4 конусный</span>
+            <span class="cat-tag">−30°C</span>
+          </div>
+          <a href="https://t.me/tarnik_plast" target="_blank" class="cat-link">
+            Узнать цену →
+          </a>
+        </div>
+      </div>
+
+      <div class="cat-card reveal reveal-delay-2">
+        <div class="cat-img">
+          <div class="cat-img-placeholder">🚜</div>
+        </div>
+        <div class="cat-body">
+          <h3>Тележки подкатные</h3>
+          <p>Под евростандарт 600×400. Грузоподъёмность 150 и 200 кг. 4 поворотных колеса. Ускоряет работу склада в 2–3 раза.</p>
+          <div class="cat-tags">
+            <span class="cat-tag">150 кг</span>
+            <span class="cat-tag">200 кг</span>
+            <span class="cat-tag">Пластик</span>
+            <span class="cat-tag">4 колеса</span>
+          </div>
+          <a href="https://t.me/tarnik_plast" target="_blank" class="cat-link">
+            Узнать цену →
+          </a>
+        </div>
+      </div>
+
+      <div class="cat-card reveal reveal-delay-3">
+        <div class="cat-img">
+          <div class="cat-img-placeholder">♻️</div>
+        </div>
+        <div class="cat-body">
+          <h3>Б/У ящики</h3>
+          <p>Хорошее состояние, цена ниже. Есть в наличии — точный ассортимент уточняйте у менеджера.</p>
+          <div class="cat-tags">
+            <span class="cat-tag">В наличии</span>
+            <span class="cat-tag">Цена ниже</span>
+            <span class="cat-tag">Уточнять у менеджера</span>
+          </div>
+          <a href="https://t.me/tarnik_plast" target="_blank" class="cat-link">
+            Уточнить наличие →
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── КАК РАБОТАЕМ ── -->
+<section class="section how" id="how">
+  <div class="section-inner">
+    <div class="section-head" style="text-align:center;">
+      <div class="section-label">Просто и быстро</div>
+      <h2 class="section-title">Как оформить заказ</h2>
+    </div>
+    <div class="how-steps">
+      <div class="how-step reveal">
+        <div class="how-step-num">1</div>
+        <h3>Напишите в Telegram</h3>
+        <p>Расскажите, что храните или перевозите — мясо, хлеб, овощи, склад. Подберём подходящую модель и размер.</p>
+      </div>
+      <div class="how-step reveal reveal-delay-2">
+        <div class="how-step-num">2</div>
+        <h3>Получите прайс</h3>
+        <p>Сразу пришлём цену и наличие нужных ящиков. Без скрытых условий — честный расчёт.</p>
+      </div>
+      <div class="how-step reveal reveal-delay-4">
+        <div class="how-step-num">3</div>
+        <h3>Заберите или доставим</h3>
+        <p>Самовывоз со склада в Долгопрудном или отправка транспортной компанией по всей России.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ДЛЯ КОГО ── -->
+<section class="section for-whom" id="for-whom">
+  <div class="section-inner">
+    <div class="section-head" style="text-align:center;">
+      <div class="section-label">Наши клиенты</div>
+      <h2 class="section-title">Работаем с любым бизнесом</h2>
+      <p class="section-desc" style="margin: 0 auto;">Если вы производите, храните или перевозите продукты — наши ящики вам подойдут.</p>
+    </div>
+    <div class="industry-grid">
+      <div class="industry-card reveal">
+        <div class="industry-icon">🥩</div>
+        <h4>Мясные производства</h4>
+        <p>Цеха, комбинаты, полуфабрикаты, охлаждённая продукция</p>
+      </div>
+      <div class="industry-card reveal reveal-delay-1">
+        <div class="industry-icon">🐟</div>
+        <h4>Рыбные цеха</h4>
+        <p>Морозостойкие ящики для заморозки и охлаждённой рыбы</p>
+      </div>
+      <div class="industry-card reveal reveal-delay-2">
+        <div class="industry-icon">🍞</div>
+        <h4>Пекарни и хлебозаводы</h4>
+        <p>Хлебные лотки, перфорированные ящики для выпечки</p>
+      </div>
+      <div class="industry-card reveal reveal-delay-3">
+        <div class="industry-icon">🥬</div>
+        <h4>Овощные базы</h4>
+        <p>Большие партии для хранения и транспортировки овощей</p>
+      </div>
+      <div class="industry-card reveal">
+        <div class="industry-icon">🚛</div>
+        <h4>Склады и логистика</h4>
+        <p>Штабелируемые ящики для стеллажей и транспортировки</p>
+      </div>
+      <div class="industry-card reveal reveal-delay-1">
+        <div class="industry-icon">💐</div>
+        <h4>Цветочные базы</h4>
+        <p>Цветочные баки 400×300 для рассады и срезанных цветов</p>
+      </div>
+      <div class="industry-card reveal reveal-delay-2">
+        <div class="industry-icon">📦</div>
+        <h4>Фулфилмент и e-com</h4>
+        <p>Раскладные ящики для экономии места при возвратах</p>
+      </div>
+      <div class="industry-card reveal reveal-delay-3">
+        <div class="industry-icon">🏭</div>
+        <h4>Промышленность</h4>
+        <p>Ящики для деталей, комплектующих, запчастей на производстве</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ПАРАЛЛАКС БАННЕР ── -->
+<section class="parallax-banner" id="parallaxBanner">
+  <div class="parallax-banner-bg" id="bannerBg">
+    <div class="parallax-banner-bg-placeholder"></div>
+  </div>
+  <div class="parallax-banner-inner reveal">
+    <span class="section-label">Получить консультацию</span>
+    <h2 class="section-title">Не знаете какой ящик <span>подойдёт вам?</span></h2>
+    <p class="parallax-banner-desc">Напишите в Telegram — расскажем что лучше подойдёт под ваш товар, нагрузку и условия хранения. Быстро и честно.</p>
+    <div class="hero-actions">
+      <a href="https://t.me/tarnik_plast" target="_blank" class="btn-primary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m22 2-7 20-4-9-9-4 20-7z"/><path d="M22 2 11 13"/></svg>
+        Написать в Telegram
+      </a>
+      <a href="tel:+79311119039" class="btn-secondary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.12 6.12l1.27-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        +7 (931) 111-90-39
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── ОТЗЫВЫ ── -->
+<section class="section reviews" id="reviews">
+  <div class="section-inner">
+    <div class="section-head">
+      <div class="section-label">Отзывы клиентов</div>
+      <h2 class="section-title">Что говорят покупатели</h2>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card reveal">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">«Брали Е3 морозостойкие под заморозку. Уже год работаем — ни одного треснувшего. Андрей сразу подобрал нужную модель, не пришлось гадать.»</p>
+        <div class="review-author">
+          <div class="review-avatar">С</div>
+          <div>
+            <div class="review-name">Сергей К.</div>
+            <div class="review-company">Мясоперерабатывающий цех, Москва</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card reveal reveal-delay-2">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">«Нужны были хлебные ящики срочно. Позвонили — сказали, есть в наличии. Приехали, загрузили, уехали. Никакой волокиты. Буду брать ещё.»</p>
+        <div class="review-author">
+          <div class="review-avatar">М</div>
+          <div>
+            <div class="review-name">Михаил Р.</div>
+            <div class="review-company">Пекарня «Свежий хлеб», Химки</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card reveal reveal-delay-4">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">«Взяли тележки вместе с ящиками — всё совместимо, как и говорили. Склад стал работать заметно быстрее. Цены честные, доставили вовремя.»</p>
+        <div class="review-author">
+          <div class="review-avatar">Е</div>
+          <div>
+            <div class="review-name">Елена В.</div>
+            <div class="review-company">Логистический склад, Долгопрудный</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── КОНТАКТЫ ── -->
+<section class="contacts" id="contacts">
+  <div class="contacts-inner">
+    <div>
+      <div class="section-label">Связаться с нами</div>
+      <h2 class="section-title">Контакты</h2>
+      <p class="section-desc">Пишите в Telegram — ответим быстро, подберём нужный ящик и скажем цену.</p>
+      <div class="contact-list">
+        <div class="contact-item reveal">
+          <div class="contact-icon">✈️</div>
+          <div>
+            <div class="contact-item-label">Telegram (основной)</div>
+            <div class="contact-item-val"><a href="https://t.me/tarnik_plast" target="_blank">@tarnik_plast</a></div>
+          </div>
+        </div>
+        <div class="contact-item reveal reveal-delay-1">
+          <div class="contact-icon">📞</div>
+          <div>
+            <div class="contact-item-label">Телефон</div>
+            <div class="contact-item-val"><a href="tel:+79311119039">+7 (931) 111-90-39</a></div>
+          </div>
+        </div>
+        <div class="contact-item reveal reveal-delay-2">
+          <div class="contact-icon">📍</div>
+          <div>
+            <div class="contact-item-label">Адрес склада</div>
+            <div class="contact-item-val">г. Долгопрудный, Проезд Строителей<br><small style="color:rgba(255,255,255,0.4); font-size:13px;">м. Ховрино</small></div>
+          </div>
+        </div>
+        <div class="contact-item reveal reveal-delay-3">
+          <div class="contact-icon">🕐</div>
+          <div>
+            <div class="contact-item-label">Режим работы</div>
+            <div class="contact-item-val">Пн–Сб: 9:00 – 18:00</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form reveal">
+      <h3>Получить прайс-лист</h3>
+      <form onsubmit="submitForm(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Ваше имя *</label>
+            <input type="text" id="f-name" placeholder="Как вас зовут?" required>
+          </div>
+          <div class="form-group">
+            <label>Телефон или Telegram *</label>
+            <input type="text" id="f-contact" placeholder="+7 или @username" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Что храните или перевозите? *</label>
+          <select id="f-product" required>
+            <option value="" disabled selected>Выберите сферу...</option>
+            <option>🥩 Мясо / рыба / птица</option>
+            <option>🍞 Хлеб / выпечка</option>
+            <option>🥬 Овощи / фрукты</option>
+            <option>❄️ Заморозка / замороженная продукция</option>
+            <option>📦 Склад / логистика</option>
+            <option>💐 Цветы / рассада</option>
+            <option>🏭 Производство / промышленность</option>
+            <option>🔄 Другое</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Нужна морозостойкость?</label>
+            <select id="f-frost">
+              <option value="" disabled selected>Выберите...</option>
+              <option>Нет, обычные условия</option>
+              <option>Да, холодильник до -30°C</option>
+              <option>Да, шоковая заморозка до -40°C</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Сколько ящиков примерно?</label>
+            <select id="f-qty">
+              <option value="" disabled selected>Выберите...</option>
+              <option>До 50 штук</option>
+              <option>50–300 штук</option>
+              <option>300–1000 штук</option>
+              <option>1000+ штук</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Доставка или самовывоз?</label>
+          <select id="f-delivery" onchange="updatePayment()">
+            <option value="" disabled selected>Выберите...</option>
+            <option value="pickup">Самовывоз (Долгопрудный)</option>
+            <option value="moscow">Доставка по Москве и МО</option>
+            <option value="region">Доставка в регион</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Способ оплаты</label>
+          <select id="f-payment">
+            <option value="" disabled selected>Сначала выберите доставку...</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Комментарий (необязательно)</label>
+          <textarea id="f-comment" placeholder="Любые уточнения по размеру, цвету, срокам..."></textarea>
+        </div>
+        <button type="submit" class="btn-primary" style="width:100%; justify-content:center;">
+          Отправить заявку
+        </button>
+        <p class="form-note">Или напишите напрямую: <a href="https://t.me/tarnik_plast" target="_blank" style="color:var(--amber);">@tarnik_plast</a> — ответим быстрее.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">ТАР<span>НИК</span></div>
+    <div class="footer-copy">© 2025 ТарНик — Пластиковая тара, г. Долгопрудный</div>
+    <div class="footer-links">
+      <a href="#catalog">Каталог</a>
+      <a href="#contacts">Контакты</a>
+      <a href="https://t.me/tarnik_plast" target="_blank">Telegram</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ── TELEGRAM FLOAT ── -->
+<a href="https://t.me/tarnik_plast" target="_blank" class="tg-float" title="Написать в Telegram">
+  <svg viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/>
+  </svg>
+</a>
+
+<!-- ── JS ── -->
+<script>
+  // Динамическая смена вариантов оплаты
+  function updatePayment() {
+    const delivery = document.getElementById('f-delivery').value;
+    const pay = document.getElementById('f-payment');
+    pay.innerHTML = '';
+
+    const addOpt = (val) => {
+      const o = document.createElement('option');
+      o.value = val; o.textContent = val;
+      pay.appendChild(o);
+    };
+
+    if (delivery === 'pickup') {
+      // Самовывоз — все три варианта
+      addOpt('💵 Наличные');
+      addOpt('💳 Перевод на карту');
+      addOpt('🏦 Расчётный счёт (безнал)');
+    } else {
+      // Доставка — без наличных
+      addOpt('💳 Перевод на карту');
+      addOpt('🏦 Расчётный счёт (безнал)');
+    }
+
+    // Добавляем подсказку первым пустым элементом
+    const hint = document.createElement('option');
+    hint.value = ''; hint.textContent = 'Выберите способ оплаты...';
+    hint.disabled = true;
+    pay.insertBefore(hint, pay.firstChild);
+    pay.value = '';
+  }
+
+  // Parallax
+  function handleParallax() {
+    const scrollY = window.scrollY;
+    const heroBg = document.getElementById('heroBg');
+    const bannerBg = document.getElementById('bannerBg');
+    if (heroBg) heroBg.style.transform = `translateY(${scrollY * 0.35}px)`;
+    if (bannerBg) {
+      const banner = document.getElementById('parallaxBanner');
+      const bannerTop = banner.getBoundingClientRect().top + scrollY;
+      const offset = scrollY - bannerTop;
+      bannerBg.style.transform = `translateY(${offset * 0.3}px)`;
+    }
+  }
+
+  // Reveal on scroll
+  function handleReveal() {
+    document.querySelectorAll('.reveal').forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 80) {
+        el.classList.add('visible');
+      }
+    });
+  }
+
+  // Counter animation
+  function animateCounter(el, target, suffix = '') {
+    let start = 0;
+    const duration = 1200;
+    const step = target / (duration / 16);
+    const timer = setInterval(() => {
+      start += step;
+      if (start >= target) { start = target; clearInterval(timer); }
+      el.textContent = Math.floor(start) + suffix;
+    }, 16);
+  }
+
+  // Nav toggle
+  function toggleNav() {
+    document.getElementById('nav').classList.toggle('open');
+  }
+
+  // Close nav on link click
+  document.querySelectorAll('#nav a').forEach(a => {
+    a.addEventListener('click', () => document.getElementById('nav').classList.remove('open'));
+  });
+
+  // Form submit → Telegram
+  async function submitForm(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button[type=submit]');
+
+    const name     = document.getElementById('f-name').value.trim();
+    const contact  = document.getElementById('f-contact').value.trim();
+    const product  = document.getElementById('f-product').value.trim();
+    const frost    = document.getElementById('f-frost').value.trim();
+    const qty      = document.getElementById('f-qty').value.trim();
+    const delivery = document.getElementById('f-delivery').value.trim();
+    const payment  = document.getElementById('f-payment').value.trim();
+    const comment  = document.getElementById('f-comment').value.trim();
+
+    btn.textContent = 'Отправляем...';
+    btn.disabled = true;
+
+    const TOKEN   = '8926340494:AAGRnCycoerguPiXYrtPymDN-E4W_RqF6co';
+    const CHAT_ID = '8554745299';
+
+    const text = [
+      '📩 Новая заявка с сайта ТарНик',
+      '',
+      `👤 Имя: ${name}`,
+      `📞 Контакт: ${contact}`,
+      `🏭 Что хранит/везёт: ${product}`,
+      `❄️ Морозостойкость: ${frost || '—'}`,
+      `📦 Объём: ${qty || '—'}`,
+      `🚚 Доставка: ${delivery || '—'}`,
+      `💳 Оплата: ${payment || '—'}`,
+      `💬 Комментарий: ${comment || '—'}`,
+    ].join('\n');
+
+    try {
+      const res = await fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ chat_id: CHAT_ID, text })
+      });
+      const data = await res.json();
+      if (data.ok) {
+        btn.textContent = '✓ Отправлено! Скоро свяжемся';
+        btn.style.background = '#1C6B3A';
+        e.target.reset();
+      } else {
+        throw new Error('Telegram error');
+      }
+    } catch {
+      btn.textContent = '⚠ Ошибка — напишите напрямую в Telegram';
+      btn.style.background = '#C0392B';
+    }
+
+    setTimeout(() => {
+      btn.textContent = 'Отправить заявку';
+      btn.style.background = '';
+      btn.disabled = false;
+    }, 4000);
+  }
+
+  // Init
+  window.addEventListener('scroll', () => {
+    handleParallax();
+    handleReveal();
+  }, { passive: true });
+
+  handleReveal();
+  handleParallax();
+</script>
+</body>
+</html>
