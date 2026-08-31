@@ -227,7 +227,7 @@
       line-height: 1.7;
       margin-bottom: 40px;
     }
-    .hero-sub p { margin-bottom: 4px; }
+    .hero-sub p { margin-bottom: 4px; white-space: nowrap; }
     .hero-actions {
       display: flex;
       gap: 14px;
@@ -883,6 +883,7 @@
       .contacts-inner { grid-template-columns: 1fr; gap: 40px; }
     }
     @media (max-width: 768px) {
+      .hero-sub p { white-space: normal; }
       .section { padding: 64px 20px; }
       .nav { display: none; }
       .burger { display: flex; }
