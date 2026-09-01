@@ -71,21 +71,11 @@
       gap: 10px;
       flex-shrink: 0;
     }
-    .logo-mark {
-      width: 40px; height: 40px;
-      background: var(--amber);
-      border-radius: 8px;
-      display: flex; align-items: center; justify-content: center;
+    .logo-img {
+      height: 44px;
+      width: auto;
+      display: block;
     }
-    .logo-mark svg { width: 24px; height: 24px; }
-    .logo-text {
-      font-family: 'Oswald', sans-serif;
-      font-size: 22px;
-      font-weight: 700;
-      color: #fff;
-      letter-spacing: 1px;
-    }
-    .logo-text span { color: var(--amber); }
     .nav {
       display: flex;
       align-items: center;
@@ -931,15 +921,7 @@
 <header class="header" id="header">
   <div class="header-inner">
     <a href="#" class="logo">
-      <div class="logo-mark">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="2" y="7" width="20" height="14" rx="2"/>
-          <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
-          <line x1="12" y1="12" x2="12" y2="16"/>
-          <line x1="10" y1="14" x2="14" y2="14"/>
-        </svg>
-      </div>
-      <span class="logo-text">ТАР<span>НИК</span></span>
+      <img src="images/logo.png" alt="ТарНик — пластиковые ящики оптом" class="logo-img">
     </a>
     <nav class="nav" id="nav">
       <a href="#catalog">Каталог</a>
