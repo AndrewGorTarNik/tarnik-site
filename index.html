@@ -1588,6 +1588,17 @@
     }, 4000);
   }
 
+  // Reveal on scroll
+  function handleReveal() {
+    const els = document.querySelectorAll('.reveal:not(.visible)');
+    els.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 60) {
+        el.classList.add('visible');
+      }
+    });
+  }
+
   // Init
   window.addEventListener('scroll', () => {
     handleParallax();
