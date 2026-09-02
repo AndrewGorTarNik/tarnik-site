@@ -1483,16 +1483,6 @@
     }
   }
 
-  // Reveal on scroll
-  function handleReveal() {
-    document.querySelectorAll('.reveal').forEach(el => {
-      const rect = el.getBoundingClientRect();
-      if (rect.top < window.innerHeight - 80) {
-        el.classList.add('visible');
-      }
-    });
-  }
-
   // Counter animation
   function animateCounter(el, target, suffix = '') {
     let start = 0;
@@ -1574,24 +1564,27 @@
     }, 4000);
   }
 
-  // Reveal on scroll
-  function handleReveal() {
-    const els = document.querySelectorAll('.reveal:not(.visible)');
-    els.forEach(el => {
-      const rect = el.getBoundingClientRect();
-      if (rect.top < window.innerHeight - 60) {
-        el.classList.add('visible');
+  // Reveal — IntersectionObserver (надёжнее scroll-события)
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
       }
     });
-  }
+  }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  // Страховка: через 1.5 сек показать всё что не показалось
+  setTimeout(() => {
+    document.querySelectorAll('.reveal:not(.visible)').forEach(el => {
+      el.classList.add('visible');
+    });
+  }, 1500);
 
   // Init
-  window.addEventListener('scroll', () => {
-    handleParallax();
-    handleReveal();
-  }, { passive: true });
-
-  handleReveal();
+  window.addEventListener('scroll', handleParallax, { passive: true });
   handleParallax();
 </script>
 </body>
