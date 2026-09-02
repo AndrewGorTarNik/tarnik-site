@@ -70,16 +70,26 @@
       align-items: center;
       gap: 10px;
       flex-shrink: 0;
+      position: relative;
+    }
+    .logo::before {
+      content: '';
+      position: absolute;
+      inset: -12px -20px;
+      background: radial-gradient(ellipse at center, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.06) 50%, rgba(255,255,255,0) 75%);
+      border-radius: 50%;
+      pointer-events: none;
     }
     .logo-img {
       height: 76px;
       width: auto;
       display: block;
-      filter:
-        drop-shadow(0 0 6px rgba(255,255,255,1))
-        drop-shadow(0 0 14px rgba(255,255,255,0.8))
-        drop-shadow(0 0 28px rgba(255,255,255,0.5))
-        drop-shadow(0 0 50px rgba(255,255,255,0.25));
+      filter: brightness(1.25)
+        drop-shadow(0 0 4px rgba(255,255,255,1))
+        drop-shadow(0 0 12px rgba(255,255,255,0.7))
+        drop-shadow(0 0 24px rgba(255,255,255,0.4));
+      position: relative;
+      z-index: 1;
     }
     .nav {
       display: flex;
